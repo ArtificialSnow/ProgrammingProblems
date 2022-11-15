@@ -1,21 +1,12 @@
-package data_structures;
+package problems.hard;
 
 import java.util.TreeMap;
 
-/**
- * RangeModule obj = new RangeModule();
- * obj.addRange(left,right);
- * boolean param_2 = obj.queryRange(left,right);
- * obj.removeRange(left,right);
- *
- * See Also: _715_RangeModule
- */
-
-public class RangeModule {
+class _715_RangeModule {
 
     TreeMap<Integer, Integer> map;
 
-    public RangeModule() {
+    public _715_RangeModule() {
         map = new TreeMap<>();
     }
 
