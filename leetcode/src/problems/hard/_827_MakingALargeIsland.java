@@ -11,7 +11,6 @@ public class _827_MakingALargeIsland {
         for (int i = 0; i < grid.length; i++) {
             for (int j = 0; j < grid.length; j++) {
                 if (grid[i][j] == 1) {
-                    int[] size = new int[1];
                     dfs(grid, componentSizes, id, i, j);
                     if(componentSizes[id] > max){
                         max = componentSizes[id];
