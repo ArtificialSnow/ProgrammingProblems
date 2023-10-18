@@ -1,5 +1,6 @@
 package problems.medium;
 
+import java.util.Comparator;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.PriorityQueue;
@@ -9,12 +10,7 @@ public class _1387_SortIntegersByThePowerValue {
         Map<Integer, Integer> stepsMap = new HashMap<>();
         stepsMap.put(1, 1);
 
-        PriorityQueue<Node> pq = new PriorityQueue<>((a, b) -> {
-            if (a.steps == b.steps) {
-                return Integer.compare(a.num, b.num);
-            }
-            return Integer.compare(a.steps, b.steps);
-        });
+        PriorityQueue<Node> pq = new PriorityQueue<>(Comparator.comparingInt(Node::getSteps));
 
         for (int i = lo; i <= hi; i++) {
             pq.add(new Node(i, solve(stepsMap, i)));
@@ -41,6 +37,10 @@ public class _1387_SortIntegersByThePowerValue {
         public Node(int num, int steps) {
             this.num = num;
             this.steps = steps;
+        }
+
+        public int getSteps() {
+            return steps;
         }
     }
 }
